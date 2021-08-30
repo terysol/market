@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding: 0;
+}
+.header{
+    width:1200px;
+    height:113px;
+    margin:0px auto;        /* 2개의 인자값은 위-아래, 왼쪽-오른쪽*/
+}
+
+
+.header h1{
+    display: inline-block;
+    position: relative;
+    width:240px;
+    height:113px;
+    background:url("../img/image__logo.png");
+    background-size:240px 113px;
+    background-position: -40px 0px;
+}
+
+.header .search{
+    display: inline-block;
+    width:553px;
+    height:48px;
+    vertical-align: top;
+    border:2px solid #067dfd;
+    border-radius: 24px;
+    margin-top: 40px;
+    margin-left: -55px;
+    box-sizing: border-box;
+}
+
+.header .search input{
+    width:480px;
+    margin-top: 10px;
+    font-size: 16px;
+    color:black;
+    line-height: 29px;
+    margin-left: 20px;
+    border:0;
+    outline: 0;
+}
+
+.header .search button{
+    width:22px;
+    height: 22px;
+    background:url("../img/image__header-search.png");
+    background-size: 22px 22px;
+    border:0;
+    margin-top: 10px;
+    margin-left: 1px;
+}

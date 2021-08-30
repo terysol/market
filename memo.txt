@@ -18,16 +18,3 @@ css - * { margin:0; padding:0}
           vertical-align:top;
       }
 
-html - markup (구조), css - 스타일, js - 로직
-사진 - 다운로드 하고 폴더에 저장
-img을 아 넣는 이유 : ex) 시각장애인분들이 screenreader에서  html의 파일의 구조를 읽어주는데 이해하는데 힘든 경향이 있음.
-
-display - block(내 부모의 영역을 다 차지 한다. ex) h1, div,), inline(내 콘텐츠 폭에만 차지)(폭과 높이를 줘봤자 소용이 없음. block은 줘도 됨.)
-                                                        virtical-inline : inline에서만 작ㅇ동
-
-부모한테 position을 relative을 준다면 안의 요소를 absolute를 준다면 부모의 0,0으로 기준으로 값을 지정할 수 잇다.  
-h1의 display을 inline으로 바꾸면 사진이 사라진다. 
-이미지의 display는 inline,  글과 사진이 정렬되는 기준은 baseline 이다.
-float 사용할 것 같으면 flex를 사용해라
-고정폭
-직계자손
