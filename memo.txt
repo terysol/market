@@ -1,0 +1,7 @@
+개발자 도구 활용
+div - header - {1200 x 113} - flex, margin : 0px auto;
+    h1 - backgroud- gmarket 로고 (header h1{ 240x 113}) - backgroud-size: 240px 113px
+
+html - markup (구조), css - 스타일, js - 로직
+사진 - 다운로드 하고 폴더에 저장
+img을 아 넣는 이유 : ex) 시각장애인분들이 screenreader에서  html의 파일의 구조를 읽어주는데 이해하는데 힘든 경향이 있음.
