@@ -72,7 +72,8 @@
 
 .header .user-menu{
     width:220px;
-    height:80px;    
+    height:80px; 
+    display: inline;   
 } 
 
 .header .user-menu button{
@@ -118,7 +119,7 @@
 
 .navigation .category::before{
     content: '';
-    background: url(../img/sprite__common.png);
+    background: url("../img/sprite__common.png");
     background-position: -251px -41px;
     background-size: 400px auto;
     display: inline-block;
@@ -132,9 +133,11 @@
 
 .navigation .service-all ul{
     vertical-align: top;
-    margin-top:20px;
+    margin-top:19px;
     list-style: none;
-    margin-left:3px;
+    margin-left: 1px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .navigation .service-all ul li{
@@ -146,7 +149,7 @@
     color:#ad834b;
 }
 
-.navigation .service-all ul #smile::after{
+.navigation .service-all ul .new::after{
     content: 'N';
     width:10px;
     height:10px;
@@ -154,4 +157,41 @@
     color:white;
     background-color:#e35944;
     /* border-radius:50%; */
+}
+
+.navigation .user-service{
+    margin-top: 22px;
+    width: 231.15px;
+    height: 40px;
+    position: absolute;
+    right:265px;
+}
+
+.navigation .user-service li + li::before{
+    content: "| ";
+    color:#777;
+}
+
+.navigation .user-service .global::after{
+    content: '';
+    background: url("../img/sprite__common.png");
+    display: inline-block;
+    vertical-align: top;
+    background-position: -338px -108px;
+    background-size: 400px auto;
+    margin-top: -3px;
+    height: 15px;
+    margin-left: -2px;
+    width: 15px;
+}
+.navigation .user-service ul li{
+    display: inline-block;
+    vertical-align: top;
+}
+.navigation .user-service ul {
+    list-style: none;
+    display: inline-block;
+    
+    font-size: 13px;
+    color: #777;
 }
