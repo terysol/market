@@ -28,34 +28,12 @@ div(navigation) - .top-menu{ width : 1200px; height:60px; maring:0px auto}
     .navigation .service-all ul{ list-style:none;}
     .navigation .service-all ul li{ display:inline-block; }
     
+09.01
+바깥쪽에 감싸과 읶는 친구ㅏ 있더라도 넘치면 표시해준다. -> 이때 overflow:hidden 을 주면 부모 컨텐츠 크기에 맞춰서 보여준다. 
+지금 제일 잘 나가는 상품 - > scale()
+데이터를 가져오는데 
 
-사진 옆으로 넘기는 것 - ul안에 li가 옆으로 길게 느려져 있다. 
-transform : 여러 개 존재,   회전,이동, 확대 축소
-transition: (상태가 변한다) 첫번째 인자(애니메이션을 할 시간) 두번재 인자(딜레이), 애니메이션 방식 - 부드럽게 바뀜.
-
-zindex
-초록색의 zindex를 이요하면 된다.
-
-명백한걸 이미지로 하기  
-이미지 포맷
-    - jpg : 투명한 값 x
-    - gif : 투명한 값 지정 가능, 애니메이션, 투명인지 - 불투명인지
-    - png : 투명한 값 가능, 투명도를 줄 수 있음
-    - svg : vector이미지 , 확대해도 잘 깨지지 않음.
-모든 요소에는 가상요소를 붙일수 있다. (::before, ::after)
-입출력할 때는 중요한 것은 횟수 
-    - connectionless : 커넥션을 하고 끊는다. <-> 메신저, 게임
-    한번 데이터를 가져올 때 데이터가 크다.
-
-자잘자잘한 사진들을 한꺼번에 모아둔다.
-size : backgroud의 크기, position : backgroud의 위치 조정
-li : block 성격을 가지고 있다. inline으로 하면 옆으로 간다. 
-스타일 적용에도 우선순위가 존재한다. 구체적인 것이 우선순위가 더 높다.  
-가장 우선순위가 높은 것은 html에 바로 style를 주는 것이 제일 높다. 
-
-ex) <ul>미아러미</ul>
-    <p>ddd</p>
-ul + p { 
-    color:red;
-}
-(ul과 인접해 있는 p에 color를 red로 바꾼다.)
+overflow - 넘치는 것을 어떤 속성을 줄 건지.
+transition - 부드럽게 할 수 있다. 
+scale(1.1)  - 확대, 축소    (제일 잘 나가는 상품)
+span(글시체의 크기와 폰트가 서로 다르는데 같은 단계에 있을 때)

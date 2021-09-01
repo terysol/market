@@ -98,7 +98,6 @@
 }
 
 
-
 /* 상단 메뉴*/ 
 .navigation{
     width:1200px;
@@ -107,7 +106,7 @@
 }
 
 .navigation .category{
-    position:inline-block;
+    display:inline-block;
     width: 224px;
     height: 60px;
     text-align: center;
@@ -115,6 +114,7 @@
     color: white;
     line-height: 60px;
     font-weight: bold;
+    border-bottom: solid 1px #3da64b;
 }
 
 .navigation .category::before{
@@ -137,7 +137,7 @@
     list-style: none;
     margin-left: 1px;
     font-size: 15px;
-    font-weight: bold;
+    
 }
 
 .navigation .service-all ul li{
@@ -153,10 +153,13 @@
     content: 'N';
     width:10px;
     height:10px;
-    font-size:2px;
+    font-size:1px;
     color:white;
     background-color:#e35944;
-    /* border-radius:50%; */
+    display: inline-block;
+    text-align: center;
+    border-radius:50%;
+    position: absolute;
 }
 
 .navigation .user-service{
@@ -168,8 +171,11 @@
 }
 
 .navigation .user-service li + li::before{
-    content: "| ";
+    content: '| ';
+    width:1px;
+    height:10px;
     color:#777;
+    
 }
 
 .navigation .user-service .global::after{
@@ -195,3 +201,57 @@
     font-size: 13px;
     color: #777;
 }
+
+hr{
+    border:solid 1px #d5ddd8;
+}
+
+/* 베너 */
+.baner .center{
+    position:relative;
+    width:1200px;
+    height:400px;
+    margin:0px auto;
+}
+.baner .category{
+    color:white;
+    background-color:#0abb26;
+    display: inline-block;
+    list-style: none;
+    line-height: 44px;
+    z-index:5;
+}
+
+.baner .category li{
+    width:224px;
+    height:44px;
+    font-size:14px;
+    text-indent: 27px;          /* 들여쓰기 */
+    
+}
+
+.baner .category li + li{
+    position: relative;
+    left:0px;
+    border-top: solid 1px #62bf66;
+    
+}
+
+.baner .slider{
+    margin:0px auto;
+    box-sizing: border-box;
+    
+}
+
+.baner .slider ul .list{
+    display: flex;
+    list-style: none;
+    transform: translateX(-976px);
+    transition: transform 0.5s 0s ease;
+    position: absolute;
+    top:175px;
+    left:520px;
+}
+
+
+
