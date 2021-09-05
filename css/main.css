@@ -239,15 +239,20 @@ hr{
 }
 
 /* 베너  slider */
-.baner .center .slider .list{
-    display: flex;
+.baner .center .slider{
+    width:976px;
+    height:400px;
+    position:absolute;
+    left: 224px;
+}
+.baner .center .slider ul li{
+    display:inline-block;
+}
+.baner .center .slider ul{
     list-style: none;
+    width:2000px;
     transform: translateX(-976px);
     transition: transform 0.5s 0s ease;
-    position: absolute;
-    top:0px;
-    left:224px;
-    height:404px;
 }
 
 /* best */
@@ -258,36 +263,57 @@ hr{
 }
 
 .best h2{
-    font-weight: 450;
+    font-family: Gmarket Sans,'Gmarket Sans',sans-serif;
+    font-weight: 900;
     font-size:24px;
 }
 
 .best .product{
-    width:224px;
     display: inline-block;
     list-style: none;
-    display: flex;
-    
+    margin: 20px
 }
 
+.best .product li{
+    display: inline-block;
+    width: 224px;
+    vertical-align: top;
+    margin-right: 3px;
+}
 
 .best .product li .box-image{
-    height:224px;
-    overflow: hidden;
-    position:relative;
-    margin:0 auto;
+    height: 224px;
     border-radius: 50%;
+    overflow: hidden;
+    border: solid 1px #eaeaea;
 }
 
 .best .product li .box-image img{
-    width:250px;
-    height:250px;
-    border-radius: 50%;
-    border:solid 1px gray;
+    width:224px;
+    height:224px;
+    transition: transform 0.2s 0s ease;
 }
 
-.best .product li .box-image:hover{
+.best .product li .box-image img:hover{
     transform :scale(1.1);
-    transition: transform 0.2s 0s ease;
+}
+
+.best .product li .info{
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.best .product li .info .name{
+    font-size:14px;
+}
+
+.best .product li .info .price{
+    margin-top:20px;
+}
+
+.best .product li .info .price .value{
+    font-family: Gmarket Sans,'Gmarket Sans',sans-serif;
+    font-size:19px;
+    font-weight: 900;
 }
 
