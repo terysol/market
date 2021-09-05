@@ -37,3 +37,27 @@ overflow - 넘치는 것을 어떤 속성을 줄 건지.
 transition - 부드럽게 할 수 있다. 
 scale(1.1)  - 확대, 축소    (제일 잘 나가는 상품)
 span(글시체의 크기와 폰트가 서로 다르는데 같은 단계에 있을 때)
+
+09.03
+server.js  -> http (require), server=http.createServer((req,res)=>{console.log(request), writeHead(상태태ㄱ코코드드), write를 사용하여 정보 전달 가능, 그리고 end로 끝맺음})
+            server.listen(9999);    
+            let filepath= request.url.substr(1)
+            fs(require) fs.readFile(filepath, (err,data)=>{
+                여기 안에서 writeHead(200);
+            })
+sdk (server developmetn kit)
+response header  : nodejs의 http에서 기본적으로 제공해주는 정보들
+웹 서버 = 웹 서버 + was     -> 로직을 돌려주는 
+apache, nginx : 달라는 것 그대로 주는 서버 (static resouce) : was 앞에서 정적 리소스를 해주고 
+was (web application server) : tomcat
+프락시?
+요청을 보면 파일의 경로이기 때문에 요청이 올 때 경로에 있는 파일을 읽어 
+substr, substring
+싱크 - 파일을 다 읽고 거기서 함수에서 리턴해주는 것 (x) => 함수가 리턴하기 전까지 아무것도 하지 않고 가만히 있는것
+response headers = content-type 응답헤더를 ㅅ주지 않으면 안됨. 값을 꼭 줘야함. 라이브러리가 있음.
+호스팅 : 어디에다 올려놔도        하나의 서버에서 여러 사람들이 같이 사용. 서버를 통째로 빌려주는 것
+서버 : 고정 ip있으면 24시간 켜놓으면 웹서비스,   클라우드 (vm)
+
+이미지를 js로 
+    이미지가 js의 배열에 있고 출력한다. main.html의 ulf를 
+처음부터 디비를 연결하면 힘들기 때문에 목(mock)데이터를 사용해서 프로그램을 실행시킨다. 
