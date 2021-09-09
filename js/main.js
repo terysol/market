@@ -1,3 +1,4 @@
+// main.js (server), nodejs
 const http = require('http');
 const fs = require('fs');
 const mimeTypes = require('mime-types');
