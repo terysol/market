@@ -2,11 +2,28 @@
 const http = require('http');
 const fs = require('fs');
 const mimeTypes = require('mime-types');
+const mysql = require('mysql');
 const port=3000;
 
+const conn = mysql.createConnection({
+    host:"localhost",
+    port:"3306",
+    user:"root",
+    password:"root1234",
+    database:"gmarket"
+})
+
+conn.connect();
+
+const sql={
+    list:'select * from products order by id desc',
+    insert:'insert into products(name, price, img, click)value(?,?,?,?) ',
+    read:'select * from products where id = ?'
+    // update : 'update emp set name=?, emp_number=?, email=? where id=?',
+    // delete : 'delete from emp where id=?'
+}
 
 const server = http.createServer((request, response) => {
-    console.log(request.url);
 
     let path;
 
@@ -15,7 +32,7 @@ const server = http.createServer((request, response) => {
             path = "../main.html";
             break;
         default:
-            path = request.url.substr(1);
+            path = `../${request.url.substr(1)}`;
             break;
     }
 
@@ -29,7 +46,6 @@ const server = http.createServer((request, response) => {
         response.writeHead(200, {
             "Content-Type": mimeTypes.lookup(path)
         });
-        console.log("mimetype : ",mimeTypes.lookup(path));
         response.end(data);
     });
 });
