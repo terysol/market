@@ -16,7 +16,7 @@ const conn = mysql.createConnection({
 conn.connect();
 
 const sql={
-    list:'select * from products order by id desc',
+    list:'select * from products order by seq desc',
     insert:'insert into products(name, price, img, click)value(?,?,?,?) ',
     read:'select * from products where id = ?'
     // update : 'update emp set name=?, emp_number=?, email=? where id=?',
@@ -30,6 +30,9 @@ const server = http.createServer((request, response) => {
     switch(request.url) {
         case "/" :
             path = "../main.html";
+            conn.query(sql.list,(err,data)=>{
+                console.log(data);
+            })
             break;
         default:
             path = `../${request.url.substr(1)}`;
@@ -49,6 +52,8 @@ const server = http.createServer((request, response) => {
         response.end(data);
     });
 });
+
+
 
 server.listen(port,()=>{
     console.log(`${port} waiting...`);

@@ -1,88 +1,62 @@
-// const products=[
-//     {
-//         name:'[키친아트]키친아트 후라이팬 1+1',
-//         image:'product1.jpeg',
-//         price:'14,900'
-//     },
-//     {
-//         name:'[베베숲]아기물티슈 프리미어 캡70매 20팩',
-//         image:'product2.jpeg',
-//         price:'27,900'
-//     },
-//     {
-//         name:'[웨스트우드]웨스트우드 가을오픈 자켓/티셔츠/팬츠 세일전',
-//         image:'product3.jpeg',
-//         price:'19,000'
-//     },
-//     {
-//         name:'[리챔]리챔 오리지널 200g 10캔',
-//         image:'product4.jpeg',
-//         price:'18,900'
-//     },
-//     {
-//         name:'[특등급] 당진해나루쌀 삼광미 10kg 2포 / 총20kg',
-//         image:'product6.jpeg',
-//         price:'67,900'
-//     }
-// ];
+// main.js (server), nodejs
+const http = require('http');
+const fs = require('fs');
+const mimeTypes = require('mime-types');
+const mysql = require('mysql');
+const port=3000;
 
+const conn = mysql.createConnection({
+    host:"localhost",
+    port:"3306",
+    user:"root",
+    password:"root1234",
+    database:"gmarket"
+})
 
-// function show(){
-//     let products=document.getElementById("bestProducts");
-//     let best_li=document.createElement("li");
-//     best_li.innerHTML=`<div class="box-image"><img src="img/${products[0]['image']}"></div>
-//                         <div class="name">${products[0]['name']}</div>
-//                         <div class="price"><span class="value">${products[0]['price']}s</span>원</div>`;
-//     products.appendChild(best_li);
-// }
-// show();
+conn.connect();
 
+const sql={
+    list:'select * from products order by seq desc',
+    insert:'insert into products(name, price, img, click)value(?,?,?,?) ',
+    read:'select * from products where id = ?'
+    // update : 'update emp set name=?, emp_number=?, email=? where id=?',
+    // delete : 'delete from emp where id=?'
+}
 
-$(document).ready(function() {
-    const products = [
-        {
-            name: "[키친아트]키친아트 후라이팬 1+1",
-            thumbnail: "product1.jpeg",
-            price: 14900
-        },
-        {
-            name: "[베베숲]아기물티슈 프리미어 캡70매 20팩",
-            thumbnail: "product2.jpeg",
-            price: 27900
-        },
-        {
-            name: "[웨스트우드]웨스트우드 가을오픈 자켓/티셔츠/팬츠 세일전",
-            thumbnail: "product3.jpeg",
-            price: 19000
-        },
-        {
-            name: "[리챔]리챔 오리지널 200g 10캔",
-            thumbnail: "product4.jpeg",
-            price: 18900
-        },
-        {
-            name: "[특등급] 당진해나루쌀 삼광미 10kg 2포 / 총20kg",
-            thumbnail: "product6.jpeg",
-            price: 67900
+const server = http.createServer((request, response) => {
+
+    let path;
+
+    switch(request.url) {
+        case "/" :
+            path = "../main copy.html";
+            // conn.query(sql.list,(err,data)=>{
+            //     console.log(data);
+            // })
+            break;
+        default:
+            path = `../${request.url.substr(1)}`;
+            break;
+    }
+
+    fs.readFile(path, (error, data) => {
+        if(error) {
+            response.writeHead(404);
+            response.end();
+            return;
         }
-    ];
 
-    // $() => querySelector, querySelectorAll 에 해당
-    $("#bestProducts").empty();
-
-    products.forEach(function(product) {
-        let html = `<li>
-            <div class="box-image">
-                <img src="img/${product.thumbnail}"/>
-            </div>
-            <div class="info">
-                <div class="name">${product.name}</div>
-                <div class="price">
-                    <span class="value">${product.price.toLocaleString()}</span>원
-                </div>
-            </div>
-        </li>`;
-
-        $("#bestProducts").append($(html));
+        response.writeHead(200, {
+            "Content-Type": mimeTypes.lookup(path)
+        });
+        response.end(data);
     });
 });
+
+
+
+server.listen(port,()=>{
+    console.log(`${port} waiting...`);
+});
+
+
