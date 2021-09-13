@@ -39,6 +39,20 @@
 
 
 $(document).ready(function() {
+    var xhr = new XMLHttpRequest();
+    console.log(xhr.readyState);
+    xhr.onreadystatechange = function() { // 요청에 대한 콜백
+    if (xhr.readyState === xhr.DONE) { // 요청이 완료되면
+        if (xhr.status === 200 || xhr.status === 201) {
+            console.log(xhr.responseText);
+        } else {
+            console.error(xhr.responseText);
+        }
+    }
+    };
+    xhr.open('GET', '/api/proudcts/best'); // 메소드와 주소 설정
+    xhr.send();
+
     const products = [
         {
             name: "[키친아트]키친아트 후라이팬 1+1",

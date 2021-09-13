@@ -31,7 +31,7 @@ const server = http.createServer((request, response) => {
         case "/" :
             path = "../main.html";
             conn.query(sql.list,(err,data)=>{
-                console.log(data);
+                //console.log("성공")
             })
             break;
         default:

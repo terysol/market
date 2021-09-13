@@ -29,13 +29,19 @@ const server = http.createServer((request, response) => {
 
     switch(request.url) {
         case "/" :
-            path = "../main copy.html";
+            path = "./main_copy.html";
+            break;
+        case "/api/proudcts/best":
+            console.log("api/products/best");
             // conn.query(sql.list,(err,data)=>{
-            //     console.log(data);
-            // })
+            //     response.writeHead(200);
+            //     response.end(data);
+            // });
+            response.writeHead(200);
+            response.end("<h1>Hello World</h1>");
             break;
         default:
-            path = `../${request.url.substr(1)}`;
+            path = `./${request.url.substr(1)}`;
             break;
     }
 
