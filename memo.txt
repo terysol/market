@@ -3,3 +3,16 @@
     json 형태로 주기 -> js에서 jswon 데이터를 가지고 보여주기
     jquery를 사용해서 ajax 예제 사용해보기
 
+
+09.14
+    1. db table (user or member), seq,id, pw
+    2. login.html ( login 페이지)   /login 페이지 만들기
+    3. 로그인 버튼을 누르면 -> xhr 요청      
+        3-1 파라미터에 넣어보기 (localhost:9999/api/login?id=1111&pw=11111) -- get
+        3-2 json 형태로 데이터 전송 -- post
+    4. 디비에 있는 데이터와 맞는지 확인 한 다음 json 데이터로 응답을 해준다. 
+        {
+            success:false,
+                message:"에러 문구"
+        }
+    5. 성공했을 경우, / url로 가야한다. 인터셉터,    리다이렉트(redirect ) 루트로 location.href

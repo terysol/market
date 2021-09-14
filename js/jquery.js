@@ -37,23 +37,39 @@
 // }
 // show();
 
-
+// spa ()
 $(document).ready(function() {
     var xhr = new XMLHttpRequest();
     console.log("callback");
+
+    // status 값이 바뀔 때마다 여러번 호출된다. 
     xhr.onreadystatechange = function() { // 요청에 대한 콜백
-    if (xhr.readyState === xhr.DONE) { // 요청이 완료되면
-        console.log("status",xhr.status);
-        if (xhr.status === 200 || xhr.status === 201) {
+        if (xhr.readyState === xhr.DONE) { // 요청이 완료되면
             console.log("status",xhr.status);
-            console.log("200");
-            console.log(xhr.responseText);
-            $("#bestProducts").empty();
-            $("#bestProducts").append($(xhr.responseText));
-            console.log(xhr.responseText);
-        } else {
-            console.error(xhr.responseText);
-        }
+            if (xhr.status === 200 || xhr.status === 201) {
+                // $("#bestProducts").empty();
+                // $("#bestProducts").append($(xhr.responseText));
+                console.log(xhr.responseText);      // 문자열을 받아 준다. 
+                // undefined 이 나온 이유
+                // let products=xhr.responseText;
+                // let best_ul=document.getElementById("bestProducts");
+                // let best_li=document.createElement("li");
+                
+                // for(var key in xhr.responseText){
+                //     console.log(key, xhr.responseText[key]);
+                // }
+
+                // best_li.innerHTML=`<div class="box-image"><img src="img/${products[k]['image']}"></div>
+                //                 <div class="name">${products[k]['name']}</div>
+                //                 <div class="price"><span class="value">${products[k]['price']}s</span>원</div>`;
+                // best_ul.appendChild(best_li);
+                    
+                
+                
+
+            } else {
+                console.error(xhr.responseText);
+            }
     }
     };
     
