@@ -9,7 +9,7 @@ const conn = mysql.createConnection({
     host:"localhost",
     port:"3306",
     user:"root",
-    password:"root1234",
+    password:"mirim2",
     database:"gmarket"
 })
 
@@ -66,8 +66,10 @@ const server = http.createServer((request, response) => {
             break;
         
         case "/api/login/:id/:password":
-            let id=request.query;
-            response.write("<h1>login</h1>");
+            let id= request.query[0];
+            let password=request.query[1];
+            console.log(id, password);
+            response.write("<h1>hello World</h1>");
             response.end();
             break;
         default:
