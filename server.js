@@ -35,7 +35,7 @@ const server = http.createServer((request, response) => {
             break;
         case "/api/proudcts/best":
             conn.query(sql.list,(err,data)=>{
-                /*
+                
                 for(let value in data){
                     response.write(`<li>
                          <div class="box-image">
@@ -50,11 +50,13 @@ const server = http.createServer((request, response) => {
                      </li>`);    
                 }
                 response.end(); 
-                */
+                
+                /*
                 response.writeHead(200,{'Content-Type':'application/json'});
                 response.write(JSON.stringify(data),'utf-8');
                 response.end();
                 
+                */
             });
             
             break;
@@ -76,6 +78,7 @@ const server = http.createServer((request, response) => {
             })
             break;
         default:
+            // 요청를 한번 출력해보면 파일의 경로(substr, substring 사용)이기 때문에 요청이 올 때 경에 있는 파일을 읽어서 보여주면 됨.
             path = `./${request.url.substr(1)}`;
             break;
     }

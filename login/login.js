@@ -3,8 +3,11 @@
 $(document).ready(function(){
     $("#button").click(function(){
         
-        let id= $("#id").val();
-        let password=$("#password").val();
+        let id= encodeURIComponent($("#id").val());
+        let password=encodeURIComponent($("#password").val());
+        
+        // encodeURIComponet vs encodeURI()
+        // encoding ⇒ password에 get 방식일 때, &, =,? 가 들어 갔을 떼, encodeURIComponet, decodeURICompoent
         console.log(id, password);
         console.log("click");  
         var xhr = new XMLHttpRequest();
