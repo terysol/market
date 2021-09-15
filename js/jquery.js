@@ -50,27 +50,24 @@ $(document).ready(function() {
                 // $("#bestProducts").empty();
                 // $("#bestProducts").append($(xhr.responseText));
                 console.log(xhr.responseText);      // 문자열을 받아 준다. 
-                // undefined 이 나온 이유
-                // let products=xhr.responseText;
-                // let best_ul=document.getElementById("bestProducts");
-                // let best_li=document.createElement("li");
+                // undefined 이 나온 이유     xhr.responseText가 string 객체이기 때문이다. 
                 
-                // for(var key in xhr.responseText){
-                //     console.log(key, xhr.responseText[key]);
-                // }
-
-                // best_li.innerHTML=`<div class="box-image"><img src="img/${products[k]['image']}"></div>
-                //                 <div class="name">${products[k]['name']}</div>
-                //                 <div class="price"><span class="value">${products[k]['price']}s</span>원</div>`;
-                // best_ul.appendChild(best_li);
-                    
+                /*
+                let products=JSON.parse(xhr.responseText);
                 
-                
-
+                let html;
+                console.log(products);
+                for(var key in products){
+                    html=`<li><div class="box-image"><img src="./img/${products[key].image}"></div>
+                                <div class="name">${products[key].name}</div>
+                                <div class="price"><span class="value">${products[key].price}</span>원</div></li>`;
+                    $("#bestProducts").append($(html));
+                }
+                */
             } else {
                 console.error(xhr.responseText);
             }
-    }
+        }
     };
     
     xhr.open('GET', '/api/proudcts/best'); // 메소드와 주소 설정
