@@ -67,6 +67,7 @@ const server = http.createServer((request, response) => {
         case "/api/login":
             let id= urlParse.query.id;
             let password=urlParse.query.password;
+            let isSave= urlParse.query.isSave;
             let success;
 
             conn.query(sql.user,(err,data)=>{
@@ -74,8 +75,13 @@ const server = http.createServer((request, response) => {
                     success=element.id === id && element.password === password; 
                 });
                 response.writeHead(200,{"Content-Type": "application/json"});
-                response.end(`{ "success": ${success}}`);
+                response.end(JSON.stringify({ "id":id, "password" : password, "success": success}));
             })
+            if(isSave){
+                if(success){
+                    // 쿠키 만들기
+                }
+            }
             break;
         default:
             // 요청를 한번 출력해보면 파일의 경로(substr, substring 사용)이기 때문에 요청이 올 때 경에 있는 파일을 읽어서 보여주면 됨.

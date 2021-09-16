@@ -98,6 +98,7 @@
 }
 
 
+
 /* 상단 메뉴*/ 
 .navigation{
     width:1200px;
@@ -140,6 +141,7 @@
     
 }
 
+
 .navigation .service-all ul li{
     display: inline-block;
     margin-left: 18px;
@@ -164,7 +166,7 @@
 
 .navigation .user-service{
     margin-top: 22px;
-    width: 231.15px;
+    width: 394px;
     height: 40px;
     position: absolute;
     right:265px;
@@ -196,12 +198,23 @@
 }
 .navigation .user-service ul {
     list-style: none;
-    display: inline-block;
+    display: inline;
     
     font-size: 13px;
     color: #777;
 }
 
+.navigation .user-service .info{
+    display:inline;
+}
+
+.navigation .user-service .info .ment{
+    display: none;
+}
+
+.navigation .user-service .info .logout{
+    display: none;
+}
 hr{
     border:solid 1px #d5ddd8;
 }
