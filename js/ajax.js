@@ -61,8 +61,11 @@ function setting(){
     if(isCookie()){
         $('#isSave').prop('checked',true);
         $('#id').val(document.cookie.split("=")[1]);
-        $('#ment_name').css('display','block');
+        
+        $('#ment_name').css('display','inline-block');
         $('#ment_name').text(document.cookie.split("=")[1]);
+        $('#logout').css('display','inline-block');
+        $('#greeting').css('display','inline-block');
     }
 }
 
@@ -91,5 +94,13 @@ $(document).ready(function(){
    
     $("#button").click(function(){
         login();
+    })
+
+    $('#logout').click(function(){
+        setCookie("user",document.cookie.split("=")[1],-1);
+        $('#ment_name').text("");
+        $('#logout').css('display','none');
+        $('#greeting').css('display','none');
+        location.href="/login";
     })
 })

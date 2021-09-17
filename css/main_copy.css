@@ -209,12 +209,20 @@
 }
 
 .navigation .user-service .info .ment{
+    display: inline-block;
+}
+
+.navigation .user-service .info .ment .ment_name{
+    display: inline-block;
+}
+.navigation .user-service .info .ment .greeting{
     display: none;
 }
 
 .navigation .user-service .info .logout{
     display: none;
 }
+
 hr{
     border:solid 1px #d5ddd8;
 }
